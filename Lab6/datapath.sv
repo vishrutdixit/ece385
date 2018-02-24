@@ -3,31 +3,32 @@ module datapath (
 		input logic LD_PC,
 		input logic LD_MAR,
 		input logic LD_MDR,
+		input logic LD_IR,
+		input logic MIO_EN,
 		input logic Reset,
 		input logic GatePC, GateMDR, GateALU, GateMARMUX,
-		input logic [15:0] MDR_in,
+		input logic [15:0] MDR_In,
 		inout wire [15:0] bus,
-		//output logic [15:0] MAR_out,
-		output logic [15:0] PC_out
+		output logic [15:0] PC_out,
+		output logic [15:0] MDR_out,
+		output logic [15:0] MAR_out,
+		output logic [15:0] IR_out		
 		
 );
 
 //internal signals
-logic [15:0] MDR_out, MAR_out;
 logic [3:0] gates;
-wire [15:0] bus_out;
 logic [15:0] PC_in;
-
+logic [15:0] MDR_D;
+assign MDR_D = (MIO_EN) ? MDR_In : bus;
 assign gates = {GatePC, GateMDR, GateALU, GateMARMUX};
 assign PC_in = (~Reset) ? 16'b0 : (PC_out + 1'b1);
-
-//assign bus = (~GatePC & ~GateMDR & ~GateALU & ~GateMARMUX) ? 16'hZ : bus_out;
 
 mux16 gateMux
 (
 	.sel(gates),
 	.a(16'hZ),
-	.b(MAR_out),
+	.b(16'hZ),
 	.c(16'hZ),
 	.d(16'hZ),
 	.e(MDR_out),
@@ -65,8 +66,16 @@ register MDR
 (
 	.clk(clk),
 	.load(LD_MDR),
-	.in(MDR_in),
+	.in(MDR_D),
 	.out(MDR_out)
+);
+
+register IR
+(
+	.clk(clk),
+	.load(LD_IR | ~Reset),
+	.in(bus),
+	.out(IR_out)
 );
 
 endmodule		

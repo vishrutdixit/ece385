@@ -74,10 +74,7 @@ assign MIO_EN = ~OE;
 
 //testing
 wire [15:0] Data_Bus;
-logic [15:0] MDR_D;
-assign MDR = (MIO_EN) ? MDR_In : Data_Bus;
-assign IR = (LD_IR | ~Reset) ? Data_Bus : IR;
-assign MAR = (LD_MAR) ? Data_Bus : MAR;
+
 
 // You need to make your own datapath module and connect everything to the datapath
 // Be careful about whether Reset is active high or low
@@ -91,10 +88,15 @@ datapath d0
 	.Reset(Reset),
 	.GateMDR(GateMDR),
 	.GateMARMUX(GateMARMUX),
-	.MDR_in(MDR),
+	.MDR_In(MDR_In),
+	.MIO_EN(MIO_EN),
 	.GateALU(GateALU),
 	.bus(Data_Bus),
-	.PC_out(PC)
+	.PC_out(PC),
+	.MDR_out(MDR),
+	.MAR_out(MAR),
+	.LD_IR(LD_IR),
+	.IR_out(IR)
 );
 
 // Our SRAM and I/O controller
