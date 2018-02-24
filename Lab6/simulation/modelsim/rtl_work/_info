@@ -1,0 +1,350 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/altera/15.0/Lab6_copy/simulation/modelsim
+vdatapath
+Z1 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+Z2 !s110 1519426728
+!i10b 1
+!s100 a7c331NhNAZidc5^=2hBl0
+IG:B:5D@dc7IcNXJ<3h[=93
+Z3 V`JN@9S9cnhjKRR_L]QIcM3
+!s105 datapath_sv_unit
+S1
+R0
+w1519426523
+8C:/altera/15.0/Lab6_copy/datapath.sv
+FC:/altera/15.0/Lab6_copy/datapath.sv
+L0 1
+Z4 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1519426728.545000
+!s107 C:/altera/15.0/Lab6_copy/datapath.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/datapath.sv|
+!i113 1
+Z5 o-sv -work work
+Z6 !s92 -sv -work work +incdir+C:/altera/15.0/Lab6_copy
+vHexDriver
+R1
+R2
+!i10b 1
+!s100 UH7P[dTK1gbKnd]=kl[zQ3
+I^fKo2E@KRFi9?7YWkW]Aj0
+R3
+!s105 HexDriver_sv_unit
+S1
+R0
+Z7 w1519443937
+8C:/altera/15.0/Lab6_copy/HexDriver.sv
+FC:/altera/15.0/Lab6_copy/HexDriver.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1519426728.647000
+!s107 C:/altera/15.0/Lab6_copy/HexDriver.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/HexDriver.sv|
+!i113 1
+R5
+R6
+n@hex@driver
+vISDU
+R1
+R2
+!i10b 1
+!s100 J>=zljG<OQ4UX2TC6S_4i1
+IDj9c34ni_n7dlH@`5LE1D1
+R3
+!s105 ISDU_sv_unit
+S1
+R0
+R7
+8C:/altera/15.0/Lab6_copy/ISDU.sv
+FC:/altera/15.0/Lab6_copy/ISDU.sv
+Z8 L0 19
+R4
+r1
+!s85 0
+31
+!s108 1519426728.315000
+!s107 C:/altera/15.0/Lab6_copy/ISDU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/ISDU.sv|
+!i113 1
+R5
+R6
+n@i@s@d@u
+vlab6_toplevel
+R1
+Z9 !s110 1519426729
+!i10b 1
+!s100 fHICUIS:<NEiBo;IXNRPL1
+I=2NLGRBdX83WjH`k4;?mT0
+R3
+!s105 lab6_toplevel_sv_unit
+S1
+R0
+R7
+8C:/altera/15.0/Lab6_copy/lab6_toplevel.sv
+FC:/altera/15.0/Lab6_copy/lab6_toplevel.sv
+L0 10
+R4
+r1
+!s85 0
+31
+!s108 1519426729.129000
+!s107 C:/altera/15.0/Lab6_copy/lab6_toplevel.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/lab6_toplevel.sv|
+!i113 1
+R5
+R6
+vMem2IO
+R1
+R2
+!i10b 1
+!s100 aChFEkE@cc]jlXeig`iRV3
+I?SA0T]GJLaFb6lVBX6gf42
+R3
+!s105 Mem2IO_sv_unit
+S1
+R0
+R7
+8C:/altera/15.0/Lab6_copy/Mem2IO.sv
+FC:/altera/15.0/Lab6_copy/Mem2IO.sv
+Z10 L0 16
+R4
+r1
+!s85 0
+31
+!s108 1519426728.230000
+!s107 C:/altera/15.0/Lab6_copy/Mem2IO.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/Mem2IO.sv|
+!i113 1
+R5
+R6
+n@mem2@i@o
+Xmemory_contents_sv_unit
+R1
+Z11 DXx4 work 6 SLC3_2 0 22 NYUKE[WKeD?oj>dUh>4Aj1
+VhVd`0[C>Q7nXPIcM:FNOP2
+r1
+!s85 0
+31
+!i10b 1
+!s100 c2m7WKcaV<L[XVf`30RGj3
+IhVd`0[C>Q7nXPIcM:FNOP2
+!i103 1
+S1
+R0
+R7
+Z12 8C:/altera/15.0/Lab6_copy/memory_contents.sv
+Z13 FC:/altera/15.0/Lab6_copy/memory_contents.sv
+L0 14
+R4
+Z14 !s108 1519426729.030000
+Z15 !s107 C:/altera/15.0/Lab6_copy/memory_contents.sv|
+Z16 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/memory_contents.sv|
+!i113 1
+R5
+R6
+vmemory_parser
+R1
+R11
+DXx4 work 23 memory_contents_sv_unit 0 22 hVd`0[C>Q7nXPIcM:FNOP2
+R3
+r1
+!s85 0
+31
+!i10b 1
+!s100 =>?QX]NFKVh?eLDI6cccY1
+If6;G4a7RI`a3dNJgg>Io93
+!s105 memory_contents_sv_unit
+S1
+R0
+R7
+R12
+R13
+R10
+R4
+R14
+R15
+R16
+!i113 1
+R5
+R6
+vmux16
+R1
+R2
+!i10b 1
+!s100 ?[AJ?X][Go09f^GbgB;[L2
+IeLkh]fTkkU3mb3d?H<8Xo1
+R3
+!s105 mux16_sv_unit
+S1
+R0
+R7
+8C:/altera/15.0/Lab6_copy/mux16.sv
+FC:/altera/15.0/Lab6_copy/mux16.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1519426728.767000
+!s107 C:/altera/15.0/Lab6_copy/mux16.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/mux16.sv|
+!i113 1
+R5
+R6
+vregister
+R1
+R2
+!i10b 1
+!s100 =zmh@?Zh;O4M^1P`K;E9m2
+Iih8efZ5h7WzMDlm:RooiM3
+R3
+!s105 register_sv_unit
+S1
+R0
+R7
+8C:/altera/15.0/Lab6_copy/register.sv
+FC:/altera/15.0/Lab6_copy/register.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1519426728.407000
+!s107 C:/altera/15.0/Lab6_copy/register.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/register.sv|
+!i113 1
+R5
+R6
+vslc3
+R1
+R2
+!i10b 1
+!s100 62odD^NQ0jmDA=GVn7U:A3
+Ij8_b2L>OOWdjTdG7GS:zF1
+R3
+!s105 slc3_sv_unit
+S1
+R0
+w1519426629
+8C:/altera/15.0/Lab6_copy/slc3.sv
+FC:/altera/15.0/Lab6_copy/slc3.sv
+R8
+R4
+r1
+!s85 0
+31
+!s108 1519426728.912000
+!s107 C:/altera/15.0/Lab6_copy/slc3.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/slc3.sv|
+!i113 1
+R5
+R6
+XSLC3_2
+R1
+R2
+!i10b 1
+!s100 Cz8_^@QRefP31?j=Zf>lj0
+INYUKE[WKeD?oj>dUh>4Aj1
+VNYUKE[WKeD?oj>dUh>4Aj1
+S1
+R0
+R7
+8C:/altera/15.0/Lab6_copy/SLC3_2.sv
+FC:/altera/15.0/Lab6_copy/SLC3_2.sv
+L0 24
+R4
+r1
+!s85 0
+31
+!s108 1519426728.132000
+!s107 C:/altera/15.0/Lab6_copy/SLC3_2.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/SLC3_2.sv|
+!i113 1
+R5
+R6
+n@s@l@c3_2
+vtest_memory
+R1
+Z17 !s110 1519426727
+!i10b 1
+!s100 RmOJMR0bUeQJAD4WlA99>2
+IeR2V:jGZT]kGRLCmBhUG21
+R3
+!s105 test_memory_sv_unit
+S1
+R0
+R7
+8C:/altera/15.0/Lab6_copy/test_memory.sv
+FC:/altera/15.0/Lab6_copy/test_memory.sv
+L0 22
+R4
+r1
+!s85 0
+31
+!s108 1519426727.641000
+!s107 C:/altera/15.0/Lab6_copy/test_memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/test_memory.sv|
+!i113 1
+R5
+R6
+vtestbench
+R1
+R9
+!i10b 1
+!s100 kk2MLllVhfh;3nL970l:?1
+IV9N6FC88Qih^oWEjH<gL51
+R3
+!s105 testbench_sv_unit
+S1
+R0
+R7
+8C:/altera/15.0/Lab6_copy/testbench.sv
+FC:/altera/15.0/Lab6_copy/testbench.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1519426729.218000
+!s107 C:/altera/15.0/Lab6_copy/testbench.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/testbench.sv|
+!i113 1
+R5
+R6
+vtristate
+R1
+R17
+!i10b 1
+!s100 c5mQSNYgK9f]9@5BiLEz30
+IX3TNRBDDERLCO^Yhb_:N23
+R3
+!s105 tristate_sv_unit
+S1
+R0
+R7
+8C:/altera/15.0/Lab6_copy/tristate.sv
+FC:/altera/15.0/Lab6_copy/tristate.sv
+R10
+R4
+r1
+!s85 0
+31
+!s108 1519426727.549000
+!s107 C:/altera/15.0/Lab6_copy/tristate.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/altera/15.0/Lab6_copy|C:/altera/15.0/Lab6_copy/tristate.sv|
+!i113 1
+R5
+R6

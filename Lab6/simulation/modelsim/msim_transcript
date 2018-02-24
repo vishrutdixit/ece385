@@ -1,0 +1,190 @@
+# Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+# do LC3_highlevel_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:/altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/tristate.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:47 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/tristate.sv 
+# -- Compiling module tristate
+# 
+# Top level modules:
+# 	tristate
+# End time: 16:58:47 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/test_memory.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:47 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/test_memory.sv 
+# -- Compiling module test_memory
+# 
+# Top level modules:
+# 	test_memory
+# End time: 16:58:48 on Feb 23,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/SLC3_2.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:48 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/SLC3_2.sv 
+# -- Compiling package SLC3_2
+# 
+# Top level modules:
+# 	--none--
+# End time: 16:58:48 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/Mem2IO.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:48 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/Mem2IO.sv 
+# -- Compiling module Mem2IO
+# 
+# Top level modules:
+# 	Mem2IO
+# End time: 16:58:48 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/ISDU.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:48 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/ISDU.sv 
+# -- Compiling module ISDU
+# 
+# Top level modules:
+# 	ISDU
+# End time: 16:58:48 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/register.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:48 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/register.sv 
+# -- Compiling module register
+# 
+# Top level modules:
+# 	register
+# End time: 16:58:48 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/datapath.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:48 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/datapath.sv 
+# -- Compiling module datapath
+# 
+# Top level modules:
+# 	datapath
+# End time: 16:58:48 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/HexDriver.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:48 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/HexDriver.sv 
+# -- Compiling module HexDriver
+# 
+# Top level modules:
+# 	HexDriver
+# End time: 16:58:48 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/mux16.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:48 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/mux16.sv 
+# -- Compiling module mux16
+# 
+# Top level modules:
+# 	mux16
+# End time: 16:58:48 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/slc3.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:48 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/slc3.sv 
+# -- Compiling module slc3
+# 
+# Top level modules:
+# 	slc3
+# End time: 16:58:48 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/memory_contents.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:49 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/memory_contents.sv 
+# -- Compiling package memory_contents_sv_unit
+# -- Importing package SLC3_2
+# -- Compiling module memory_parser
+# 
+# Top level modules:
+# 	memory_parser
+# End time: 16:58:49 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/lab6_toplevel.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:49 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/lab6_toplevel.sv 
+# -- Compiling module lab6_toplevel
+# 
+# Top level modules:
+# 	lab6_toplevel
+# End time: 16:58:49 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/altera/15.0/Lab6_copy {C:/altera/15.0/Lab6_copy/testbench.sv}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 16:58:49 on Feb 23,2018
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/altera/15.0/Lab6_copy" C:/altera/15.0/Lab6_copy/testbench.sv 
+# -- Compiling module testbench
+# 
+# Top level modules:
+# 	testbench
+# End time: 16:58:49 on Feb 23,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  testbench
+# vsim -gui "+altera" -l msim_transcript -do "LC3_highlevel_run_msim_rtl_verilog.do" 
+# Start time: 16:58:49 on Feb 23,2018
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.lab6_toplevel
+# Loading work.slc3
+# Loading work.HexDriver
+# Loading work.datapath
+# Loading work.mux16
+# Loading work.register
+# Loading work.Mem2IO
+# Loading work.tristate
+# Loading work.ISDU
+# Loading work.test_memory
+# Loading work.SLC3_2
+# Loading work.memory_contents_sv_unit
+# Loading work.memory_parser
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 100 ns
+do wave.do; restart -f; run 500ns;
+# Loading sv_std.std
+# Loading work.testbench
+# Loading work.lab6_toplevel
+# Loading work.slc3
+# Loading work.HexDriver
+# Loading work.datapath
+# Loading work.mux16
+# Loading work.register
+# Loading work.Mem2IO
+# Loading work.tristate
+# Loading work.ISDU
+# Loading work.test_memory
+# Loading work.SLC3_2
+# Loading work.memory_contents_sv_unit
+# Loading work.memory_parser
+# WARNING: No extended dataflow license exists
