@@ -110,7 +110,7 @@ module ISDU (input logic			Clk, Reset, Run, Continue,
 			S_33_2 : 
 				Next_state = S_35;
 			S_35 : 
-				Next_state = PauseIR1;
+				Next_state = S_32;
 			// PauseIR1 and PauseIR2 are only for Week 1 such that TAs can see 
 			// the values in IR.
 			PauseIR1 : 
@@ -205,8 +205,14 @@ module ISDU (input logic			Clk, Reset, Run, Continue,
 					GateMDR = 1'b1;
 					LD_IR = 1'b1;
 				end
-			PauseIR1: ;
-			PauseIR2: ;
+			PauseIR1: 
+				begin
+					LD_LED = 1'b1;
+				end
+			PauseIR2: 
+				begin
+					LD_LED = 1'b1;
+				end
 			S_32 : 
 				LD_BEN = 1'b1;
 			S_01 : 							    // R(DR) <- R(SR1) + R(SR2) (or SEXT(imm5))
@@ -262,7 +268,7 @@ module ISDU (input logic			Clk, Reset, Run, Continue,
 			S_LDR:	 							 // MAR <- B + off6
 				begin
 					ADDR1MUX = 1'b1; 			 // from BaseR
-					ADDR2MUX = 2'b01; 			 // offset6
+					ADDR2MUX = 2'b01; 		 // offset6
 					GateMARMUX = 1'b1;		 
 					LD_MAR = 1'b1;
 				end
@@ -284,7 +290,7 @@ module ISDU (input logic			Clk, Reset, Run, Continue,
 			S_STR :                        // MAR <- B + off6
 				begin
 					ADDR1MUX = 1'b1; 			 // from BaseR
-					ADDR2MUX = 2'b01; 			 // offset6
+					ADDR2MUX = 2'b01; 		 // offset6
 					GateMARMUX = 1'b1;		 
 					LD_MAR = 1'b1;
 				end
@@ -295,7 +301,7 @@ module ISDU (input logic			Clk, Reset, Run, Continue,
 					GateALU = 1'b1;
 					LD_MDR = 1'b1;	
 				end
-			S_STR2_1 :					// M[MAR} <- MDR
+			S_STR2_1 :					       // M[MAR} <- MDR
 				begin 
 					Mem_WE = 1'b0;
 					GateMDR = 1'b1;
