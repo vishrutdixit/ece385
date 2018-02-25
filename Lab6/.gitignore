@@ -1,4 +1,4 @@
-*/*
 !wave.do
+*/
 !*/*.sv
 *.sv.bak
