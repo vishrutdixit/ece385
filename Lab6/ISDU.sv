@@ -176,6 +176,8 @@ module ISDU (input logic			Clk, Reset, Run, Continue,
 				Next_state = S_STR2_1;
 			S_STR2_1 :
 				Next_state = S_STR2_2;
+			S_STR2_2 :
+				Next_state = S_18;
 
 			default : ;
 

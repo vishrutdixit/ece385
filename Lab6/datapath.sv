@@ -26,7 +26,7 @@ logic [15:0] sr1_out, sr2_out;
 
 //2-to-1 muxes
 assign MDR_D = (MIO_EN) ? MDR_In : bus;
-assign addr1mux_out = (ADDR1MUX) ? PC_out : sr1_out;
+assign addr1mux_out = (~ADDR1MUX) ? PC_out : sr1_out;
 assign sr1mux_out = (SR1MUX) ? IR_out[11:9] : IR_out[8:6];
 assign drmux_out = (DRMUX) ? 3'b111 : IR_out[11:9];
 assign sr2mux_out = (SR2MUX) ? sext5_out : sr2_out;
@@ -34,6 +34,7 @@ assign sr2mux_out = (SR2MUX) ? sext5_out : sr2_out;
 //marmux (without trap)
 logic [15:0] MARMUX_out;
 assign MARMUX_out = addr1mux_out + addr2mux_out;
+
 
 assign gates = {GatePC, GateMDR, GateALU, GateMARMUX};
 
@@ -84,8 +85,8 @@ mux4 PCmux
 (
 	.sel(PCMUX),
 	.a(PC_out + 16'h1),
-	.b(addr1mux_out + addr2mux_out),
-	.c(bus),
+	.b(bus),					// output of the adder
+	.c(MARMUX_out),
 	.d(16'hX),
 	.out(PCmux_out)
 );
@@ -148,14 +149,16 @@ nzp_comp nzp_comp_inst
 	.out(BEN_in)
 );
 
-register #(.width(1)) BEN
-(
-	.clk(clk),
-	.load(LD_BEN),
-	.clear(~Reset),
-	.in(BEN_in),
-	.out(BEN_out)
-);
+assign BEN_out = (LD_BEN) ? (BEN_in) : 1'b0;
+
+//register #(.width(1)) BEN
+//(
+//	.clk(clk),
+//	.load(LD_BEN),
+//	.clear(~Reset),
+//	.in(BEN_in),
+//	.out(BEN_out)
+//);
 
 //sign extension modules
 sext #(.width(5))  sext5  (.in(IR_out[4:0]),.out(sext5_out));
