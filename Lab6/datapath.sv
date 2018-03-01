@@ -128,37 +128,25 @@ mux4 addr2mux
 	.out(addr2mux_out)
 );
 
-//CC-assign logic
-assign nzp_in[0] = ~bus[15];
-assign nzp_in[1] = (bus == 16'd0) ? 1'b1 : 1'b0;
-assign nzp_in[2] = bus[15];
-
-register #(.width(3)) nzp
-(
-	.clk(clk),
-	.load(LD_CC),
-	.clear(~Reset),
-	.in(nzp_in),
-	.out(nzp_out)
-);
-
 nzp_comp nzp_comp_inst
 (
-	.a(nzp_out),
-	.b(IR_out[11:9]),
+	.clk(clk),
+	.data(bus),
+	.load(LD_CC),
+	.Reset(Reset),
+	.cc(IR_out[11:9]),
 	.out(BEN_in)
 );
 
-assign BEN_out = (LD_BEN) ? (BEN_in) : 1'b0;
 
-//register #(.width(1)) BEN
-//(
-//	.clk(clk),
-//	.load(LD_BEN),
-//	.clear(~Reset),
-//	.in(BEN_in),
-//	.out(BEN_out)
-//);
+register #(.width(1)) BEN
+(
+	.clk(clk),
+	.load(LD_BEN),
+	.clear(~Reset),
+	.in(BEN_in),
+	.out(BEN_out)
+);
 
 //sign extension modules
 sext #(.width(5))  sext5  (.in(IR_out[4:0]),.out(sext5_out));

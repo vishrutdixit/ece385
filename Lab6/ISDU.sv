@@ -1,4 +1,4 @@
-//------------------------------------------------------------------------------
+	//------------------------------------------------------------------------------
 // Company:          UIUC ECE Dept.
 // Engineer:         Stephen Kempf
 //
@@ -44,6 +44,7 @@ module ISDU (input logic			Clk, Reset, Run, Continue,
 							S_AND,
 							S_NOT,
 							S_BR,
+							S_BR1,
 							S_JMP,
 							S_JSR,
 							S_JSR1,
@@ -132,8 +133,7 @@ module ISDU (input logic			Clk, Reset, Run, Continue,
 					4'b1001 :
 						Next_state = S_NOT;
 					4'b0000 :
-						if(BEN) Next_state = S_BR;
-						else Next_state = S_18;
+						Next_state = S_BR;
 					4'b1100 :
 						Next_state = S_JMP;
 					4'b0100 :
@@ -155,6 +155,9 @@ module ISDU (input logic			Clk, Reset, Run, Continue,
 			S_NOT :
 				Next_state = S_18;
 			S_BR :
+				if(BEN) Next_state = S_BR1;
+				else Next_state = S_18;
+			S_BR1:
 				Next_state = S_18;
 			S_JMP : 
 				Next_state = S_18;
@@ -240,7 +243,8 @@ module ISDU (input logic			Clk, Reset, Run, Continue,
 					LD_REG = 1'b1;
 					LD_CC = 1'b1;
 				end
-			S_BR  :  							 // PC <- PC + SEXT(PCoffset9)
+			S_BR : ;
+			S_BR1  :  							 // PC <- PC + SEXT(PCoffset9)
 				begin
 					ADDR1MUX = 1'b0; 			 // from PC
 					ADDR2MUX = 2'b10; 		 // offset9

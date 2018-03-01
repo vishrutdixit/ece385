@@ -193,6 +193,7 @@ set_location_assignment PIN_AB28 -to S[0]
 set_location_assignment PIN_AC4 -to UB
 set_location_assignment PIN_AE8 -to WE
 set_global_assignment -name EDA_TEST_BENCH_FILE testbench.sv -section_id testbench
+set_global_assignment -name SYSTEMVERILOG_FILE ALU.sv
 set_global_assignment -name SYSTEMVERILOG_FILE mux8.sv
 set_global_assignment -name SYSTEMVERILOG_FILE mux4.sv
 set_global_assignment -name SYSTEMVERILOG_FILE sext.sv
