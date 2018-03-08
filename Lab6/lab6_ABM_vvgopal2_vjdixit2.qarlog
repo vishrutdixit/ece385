@@ -1,0 +1,33 @@
+Quartus II Archive log --	C:/Users/Vignesh/Documents/ece385/Lab6/lab6_ABM_vvgopal2_vjdixit2.qarlog
+
+Archive:	C:/Users/Vignesh/Documents/ece385/Lab6/lab6_ABM_vvgopal2_vjdixit2.qar
+Date:		Thu Mar 01 12:26:39 2018
+Quartus II 64-Bit		15.0.0 Build 145 04/22/2015 SJ Web Edition
+
+	=========== Files Selected: ===========
+C:/Users/Vignesh/Documents/ece385/Lab6/ALU.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/HexDriver.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/ISDU.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/LC3_highlevel.qsf
+C:/Users/Vignesh/Documents/ece385/Lab6/Mem2IO.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/SLC3_2.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/assignment_defaults.qdf
+C:/Users/Vignesh/Documents/ece385/Lab6/datapath.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/lab6.qpf
+C:/Users/Vignesh/Documents/ece385/Lab6/lab6_toplevel.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/memory_contents.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/mux16.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/mux4.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/mux8.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/nzp_comp.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/regfile.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/register.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/sext.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/slc3.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/test_memory.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/testbench.sv
+C:/Users/Vignesh/Documents/ece385/Lab6/tristate.sv
+	======= Total: 22 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
