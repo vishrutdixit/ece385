@@ -20,7 +20,8 @@ module lab7(  	  input	       CLOCK_50,
 					  output  [3:0] DRAM_DQM,
 					  output		    DRAM_RAS_N,
 					  output		    DRAM_WE_N,
-					  output		    DRAM_CLK
+					  output		    DRAM_CLK,
+					  input [7:0]	 SW
 				  
 				  );
 				  
@@ -38,7 +39,10 @@ module lab7(  	  input	       CLOCK_50,
 											 .sdram_wire_dqm(DRAM_DQM),     	//  .dqm
 											 .sdram_wire_ras_n(DRAM_RAS_N),    //  .ras_n
 											 .sdram_wire_we_n(DRAM_WE_N),      //  .we_n
-											 .sdram_clk_clk(DRAM_CLK)			//  clock out to SDRAM from other PLL port
+											 .sdram_clk_clk(DRAM_CLK),			//  clock out to SDRAM from other PLL port
+											 .key_2_wire_export(~KEY[2]),
+											 .key_3_wire_export(~KEY[3]),
+											 .sw_wire_export(SW)
 											 );
 											 
 				//Instantiate additional FPGA fabric modules as needed		  
