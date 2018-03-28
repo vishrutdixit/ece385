@@ -107,12 +107,12 @@ module lab8( input               CLOCK_50,
     
     // Use PLL to generate the 25MHZ VGA_CLK.
     // You will have to generate it on your own in simulation.
-    vga_clk vga_clk_instance(.inclk0(Clk), .c0(VGA_CLK));
+    vga_clk vga_clk_instance(.inclk0(CLOCK_50), .c0(VGA_CLK));
     
     // TODO: Fill in the connections for the rest of the modules 
     VGA_controller vga_controller_instance
 	 (
-		 .Clk(Clk),         // 50 MHz clock
+		 .Clk(CLOCK_50),         // 50 MHz clock
 		 .Reset(Reset_h),       // Active-high reset signal
 		 .VGA_HS(VGA_HS),      // Horizontal sync pulse.  Active low
 		 .VGA_VS(VGA_VS),      // Vertical sync pulse.  Active low
@@ -126,11 +126,11 @@ module lab8( input               CLOCK_50,
     // Which signal should be frame_clk?
     ball ball_instance
 	 (
-		.Clk(Clk),                // 50 MHz clock
+		.Clk(CLOCK_50),                // 50 MHz clock
       .Reset(Reset_h),              // Active-high reset signal
-      .frame_clk(VGA_CLK),          // The clock indicating a new frame (~60Hz)
+      .frame_clk(VGA_VS),          // The clock indicating a new frame (~60Hz)
       .DrawX(DrawX), 
-		.keycode,
+		.keycode(keycode),
 		.DrawY(DrawY),       // Current pixel coordinates
       .is_ball(is_ball)             // Whether current pixel belongs to ball or background
 	 );

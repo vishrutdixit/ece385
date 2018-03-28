@@ -142,6 +142,7 @@ module  ball ( input         Clk,                // 50 MHz clock
 						else
 							Ball_X_Motion_in <= Ball_X_Step;
 					end
+				default: ;//do nothing 
 			endcase
        
    // Update the ball's position with its motion
