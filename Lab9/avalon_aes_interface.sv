@@ -36,6 +36,41 @@ module avalon_aes_interface (
 	
 	// Exported Conduit
 	output logic [31:0] EXPORT_DATA		// Exported Conduit Signal to LEDs
+	
+	// Registers
+	logic [31:0] data [15:0];
+	
+	initial
+	begin
+    for (int i = 0; i < $size(data); i++)
+    begin
+        data[i] = 32'b0;
+    end
+	end
+	
+	always_ff @(posedge clk)
+	begin
+    if (AVL_WRITE == 1 && AVL_CS == 1)
+    begin
+		for (int i = 0; i < 3; i++)
+		begin
+			if(AVL_BYTE_EN[i] == 1)
+			begin
+				data[AVL_ADDR][(8*i)+7:8*i] <= AVL_WRITEDATA[(8*i)+7:8*i];		
+			end
+		end
+    end
+	end
+	
+	always_comb
+	begin
+		if(AVL_READ == 1 && AVL_CS == 1)
+		begin
+			//EXPORT_DATA should be assigned to the first 2 and last 2 bytes of AES Key
+			EXPORT_DATA = {data[3][31:24],data[0][17:0]};
+		end
+	end
+	
 );
 
 
