@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Wed Mar 28 22:13:52 2018
+Analysis & Synthesis Status : Successful - Thu Mar 29 12:18:08 2018
 Quartus II 64-Bit Version : 15.0.2 Build 153 07/15/2015 SJ Full Version
 Revision Name : lab9_top
 Top-level Entity Name : lab9_top
 Family : Cyclone IV E
-Total logic elements : 4,467
-    Total combinational functions : 2,943
+Total logic elements : 4,473
+    Total combinational functions : 2,949
     Dedicated logic registers : 2,700
 Total registers : 2700
 Total pins : 142

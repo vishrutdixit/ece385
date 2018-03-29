@@ -99,7 +99,7 @@
     </sld_info>
     <sld_info hpath="lab7_soc:lab9_qsystem" name="lab9_qsystem">
       <assignment_values>
-        <assignment_value text="QSYS_NAME lab7_soc HAS_SOPCINFO 1 GENERATION_ID 1522292615"/>
+        <assignment_value text="QSYS_NAME lab7_soc HAS_SOPCINFO 1 GENERATION_ID 1522343701"/>
       </assignment_values>
       <parameters/>
     </sld_info>

@@ -148,7 +148,7 @@ void KeyExpansion(unsigned char* key, unsigned char* key_schedule) {
 		}
 	}
 	print(key_schedule);
-	for (i = 4; i < 45; i++){
+	for (i = 4; i < 44; i++){
 		for (j = 0; j < 4; j++){
 			temp[j] = key_schedule[4*(i-1)+j];
 		}
@@ -162,17 +162,13 @@ void KeyExpansion(unsigned char* key, unsigned char* key_schedule) {
 			//Sub Word
 			for(k = 0; k < 4; k++){
 				temp[k] = aes_sbox[(uint)temp[k]];
+				temp[k] = temp[k] ^ (Rcon[i/Nk]);
 			}
-
-			temp[0] = temp[0] ^ (Rcon[i/Nk] >> 24);
 		}
 		for(k = 0; k < 4; k++) {
 			key_schedule[4*i+k] = temp[k] ^ key_schedule[4*(i-4)+k];
 		}
 	}
-	print(key_schedule+32);
-
-
 }
 
 /** encrypt
@@ -187,35 +183,30 @@ void encrypt(unsigned char * msg_ascii, unsigned char * key_ascii, unsigned int 
 {
 	uchar state[16];
 	uchar key_schedule[176];
+	uchar key_state[16];
 	int i;
 	for (i = 0; i < 16; i++){
 		state[i] = (uchar)charsToHex((char)msg_ascii[2*i],(char)msg_ascii[(2*i)+1]);
+		key_state[i] = (uchar)charsToHex((char)key_ascii[2*i],(char)key_ascii[(2*i)+1]);
 	}
 
-	for (i = 0; i < 4; i++){
-		key[i] = (((uint)charsToHex((char)key_ascii[8*i],(char)key_ascii[8*i+1]) << 24) + (charsToHex((char)key_ascii[8*i+2],(char)key_ascii[8*i+3]) << 16) +
-				 (charsToHex((char)key_ascii[8*i+4],(char)key_ascii[8*i+5]) << 8) + (charsToHex((char)key_ascii[8*i+6],(char)key_ascii[8*i+7])));
-		printf("key: %08x\n", key[i]);
-	}
 
-	//printf("before Key Expansion\n");
-	KeyExpansion((uchar*)key, key_schedule);
-	//printf("before AddRoundKey\n");
+	KeyExpansion(key_state, key_schedule);
 	AddRoundKey(state, key_schedule);
 
-	for (i = 0; i < 9; i++) {
+	for (i = 1; i < 10; i++) {
 		SubBytes(state);
 		ShiftRows(state);
 		MixColumns(state);
-		AddRoundKey(state, key_schedule+16*(i+1));
+		AddRoundKey(state, key_schedule+16*(i));
 	}
 
 	SubBytes(state);
 	ShiftRows(state);
 	AddRoundKey(state, key_schedule+160);
-
 	for (i = 0; i < 4; i++) {
-		msg_enc[i] = state[4*i] << 24^state[4*i + 1] << 16^state[4*i + 2] << 8^state[4*i+3];
+		msg_enc[i] = state[4*i] << 24 + state[4*i + 1] << 16 + state[4*i + 2] << 8 + state[4*i+3];
+		key[i] = (int)(key_state[i*4]<<24)+(int)(key_state[i*4+1]<<16)+ (int)(key_state[i*4+2]<<8)+(int)(key_state[i*4+3]);
 	}
 }
 

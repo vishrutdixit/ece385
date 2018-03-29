@@ -83,15 +83,5 @@ module avalon_aes_interface (
 			AVL_READDATA = data[AVL_ADDR];
 		end
 	end
-	
-	/*
-	always_comb
-	begin
-		if(AVL_READ == 1 && AVL_CS == 1)
-		begin
-			AVL_READDATA = data[AVL_ADDR];
-		end
-	end
-	*/
 
 endmodule
