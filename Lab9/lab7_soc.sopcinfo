@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="lab7_soc" kind="lab7_soc" version="1.0" fabric="QSYS">
  <!-- Format version 15.0 153 (Future versions may contain additional information.) -->
- <!-- 2018.03.28.19:21:49 -->
+ <!-- 2018.03.28.22:03:35 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1522282909</value>
+  <value>1522292615</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -907,6 +907,12 @@ parameters are a RESULT of the module parameters. -->
     <moduleName>timer_0</moduleName>
     <slaveName>clk</slaveName>
     <name>timer_0.clk</name>
+   </clockDomainMember>
+   <clockDomainMember>
+    <isBridge>false</isBridge>
+    <moduleName>onchip_memory2_0</moduleName>
+    <slaveName>clk1</slaveName>
+    <name>onchip_memory2_0.clk1</name>
    </clockDomainMember>
    <clockDomainMember>
     <isBridge>false</isBridge>
@@ -8709,12 +8715,6 @@ parameters are a RESULT of the module parameters. -->
     <width>1</width>
     <role>clk</role>
    </port>
-   <clockDomainMember>
-    <isBridge>false</isBridge>
-    <moduleName>onchip_memory2_0</moduleName>
-    <slaveName>clk1</slaveName>
-    <name>onchip_memory2_0.clk1</name>
-   </clockDomainMember>
   </interface>
   <interface name="areset_conduit" kind="conduit_end" version="15.0">
    <!-- The connection points exposed by a module instance for the
@@ -8865,7 +8865,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.TIMESTAMP</name>
-   <value>1522282909</value>
+   <value>1522292615</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.compatible</name>
@@ -8885,7 +8885,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.dts.params.timestamp</name>
-   <value>1522282909</value>
+   <value>1522292615</value>
   </assignment>
   <assignment>
    <name>embeddedsw.dts.vendor</name>
@@ -8901,7 +8901,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="timestamp">
    <type>int</type>
-   <value>1522282909</value>
+   <value>1522292615</value>
    <derived>true</derived>
    <enabled>false</enabled>
    <visible>false</visible>
@@ -10845,33 +10845,6 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>clk</endConnectionPoint>
  </connection>
  <connection
-   name="sdram_pll.c1/onchip_memory2_0.clk1"
-   kind="clock"
-   version="15.0"
-   start="sdram_pll.c1"
-   end="onchip_memory2_0.clk1">
-  <parameter name="deviceFamily">
-   <type>java.lang.String</type>
-   <value>UNKNOWN</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <parameter name="generateLegacySim">
-   <type>boolean</type>
-   <value>false</value>
-   <derived>false</derived>
-   <enabled>true</enabled>
-   <visible>true</visible>
-   <valid>true</valid>
-  </parameter>
-  <startModule>sdram_pll</startModule>
-  <startConnectionPoint>c1</startConnectionPoint>
-  <endModule>onchip_memory2_0</endModule>
-  <endConnectionPoint>clk1</endConnectionPoint>
- </connection>
- <connection
    name="clk_0.clk/AES.CLK"
    kind="clock"
    version="15.0"
@@ -11005,6 +10978,33 @@ parameters are a RESULT of the module parameters. -->
   <startConnectionPoint>clk</startConnectionPoint>
   <endModule>timer_0</endModule>
   <endConnectionPoint>clk</endConnectionPoint>
+ </connection>
+ <connection
+   name="clk_0.clk/onchip_memory2_0.clk1"
+   kind="clock"
+   version="15.0"
+   start="clk_0.clk"
+   end="onchip_memory2_0.clk1">
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <startModule>clk_0</startModule>
+  <startConnectionPoint>clk</startConnectionPoint>
+  <endModule>onchip_memory2_0</endModule>
+  <endConnectionPoint>clk1</endConnectionPoint>
  </connection>
  <connection
    name="clk_0.clk/sdram_pll.inclk_interface"

@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include "aes.h"
+
+int main()
+{
+	char line[1024];
+
+	scanf("%[^\n]", line);
+	printf("%s", line);
+
+	char * pch;
+	pch = strtok (str," ,.-");
+	while (pch != NULL)
+	{
+	  printf ("%s\n",pch);
+	  pch = strtok (NULL, " ,.-");
+	}
+
+
+}

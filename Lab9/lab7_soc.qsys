@@ -212,6 +212,7 @@
    dir="end" />
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <interface name="sdram_clk" internal="sdram_pll.c1" type="clock" dir="start" />
  <interface name="sdram_wire" internal="sdram.wire" type="conduit" dir="end" />
  <module name="AES" kind="AES_Decryption_Core" version="1.1" enabled="1" />
  <module name="clk_0" kind="clock_source" version="15.0" enabled="1">
@@ -782,16 +783,16 @@
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="clock" version="15.0" start="sdram_pll.c0" end="sdram.clk" />
- <connection
-   kind="clock"
-   version="15.0"
-   start="sdram_pll.c1"
-   end="onchip_memory2_0.clk1" />
  <connection kind="clock" version="15.0" start="clk_0.clk" end="AES.CLK" />
  <connection kind="clock" version="15.0" start="clk_0.clk" end="sysid_qsys_0.clk" />
  <connection kind="clock" version="15.0" start="clk_0.clk" end="nios2_gen2_0.clk" />
  <connection kind="clock" version="15.0" start="clk_0.clk" end="jtag_uart_0.clk" />
  <connection kind="clock" version="15.0" start="clk_0.clk" end="timer_0.clk" />
+ <connection
+   kind="clock"
+   version="15.0"
+   start="clk_0.clk"
+   end="onchip_memory2_0.clk1" />
  <connection
    kind="clock"
    version="15.0"

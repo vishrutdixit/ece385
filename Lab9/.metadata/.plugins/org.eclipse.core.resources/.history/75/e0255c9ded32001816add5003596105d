@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include "aes.h"
+
+int main()
+{
+	char line[1024];
+
+	scanf("%[^\n]", line);
+
+	printf("%s", line);
+}

@@ -11,7 +11,8 @@ module lab7_soc (
 	sdram_wire_dq,
 	sdram_wire_dqm,
 	sdram_wire_ras_n,
-	sdram_wire_we_n);	
+	sdram_wire_we_n,
+	sdram_clk_clk);	
 
 	output	[31:0]	aes_export_EXPORT_DATA;
 	input		clk_clk;
@@ -25,4 +26,5 @@ module lab7_soc (
 	output	[3:0]	sdram_wire_dqm;
 	output		sdram_wire_ras_n;
 	output		sdram_wire_we_n;
+	output		sdram_clk_clk;
 endmodule

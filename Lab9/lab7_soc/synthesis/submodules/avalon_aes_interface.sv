@@ -35,8 +35,63 @@ module avalon_aes_interface (
 	output logic [31:0] AVL_READDATA,	// Avalon-MM Read Data
 	
 	// Exported Conduit
-	output logic [31:0] EXPORT_DATA		// Exported Conduit Signal to LEDs
-);
-
+	output logic [31:0] EXPORT_DATA);		// Exported Conduit Signal to LEDs
+	
+	// Registers
+	logic [31:0] data [15:0];
+	
+	assign EXPORT_DATA = {data[3][31:16],data[0][15:0]};
+	
+	initial
+	begin
+		for (int i = 0; i < $size(data); i++)
+		begin
+        data[i] = 32'b0;
+    end
+	end
+	
+	always_ff @(posedge CLK)
+	begin
+    if (AVL_WRITE == 1 && AVL_CS == 1)
+    begin
+		case(AVL_BYTE_EN)
+			4'b1111: begin
+				data[AVL_ADDR][31:0] <= AVL_WRITEDATA[31:0];
+         end
+         4'b1100: begin
+            data[AVL_ADDR][31:16] <= AVL_WRITEDATA[31:16];
+         end
+         4'b0011: begin
+            data[AVL_ADDR][15:0] <= AVL_WRITEDATA[15:0];
+         end
+         4'b1000: begin
+            data[AVL_ADDR][31:24] <= AVL_WRITEDATA[31:24];
+         end
+         4'b0100: begin
+            data[AVL_ADDR][23:16] <= AVL_WRITEDATA[23:16];
+         end
+         4'b0010: begin
+            data[AVL_ADDR][15:8] <= AVL_WRITEDATA[15:8];
+         end
+         4'b0001: begin
+            data[AVL_ADDR][7:0] <= AVL_WRITEDATA[7:0];
+         end
+		endcase
+    end
+	 if(AVL_READ == 1 && AVL_CS == 1)
+		begin
+			AVL_READDATA = data[AVL_ADDR];
+		end
+	end
+	
+	/*
+	always_comb
+	begin
+		if(AVL_READ == 1 && AVL_CS == 1)
+		begin
+			AVL_READDATA = data[AVL_ADDR];
+		end
+	end
+	*/
 
 endmodule
