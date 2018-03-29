@@ -62,16 +62,6 @@ char charsToHex(char c1, char c2)
 	return (hex1 << 4) + hex2;
 }
 
-//print for debug
-void print(uchar* input){
-	int i;
-	printf("the printed data is: ");
-	for(i=0; i<16; i++){
-		printf("%02x", input[i]);
-	}
-	printf("\n");
-}
-
 /** AddRoundKey
  *
  */
@@ -139,15 +129,13 @@ void MixColumns(uchar* state){
  *
  */
 void KeyExpansion(unsigned char* key, unsigned char* key_schedule) {
-
 	unsigned char temp[4];
 	int i,j,k;
 	for (i = 0; i < 4; i++) {
 		for (j = 0; j < 4; j++){
-			key_schedule[4*i+j] = key[4*i+j];
+			key_schedule[4*i+j] = key[4*i+3-j];
 		}
 	}
-	print(key_schedule);
 	for (i = 4; i < 45; i++){
 		for (j = 0; j < 4; j++){
 			temp[j] = key_schedule[4*(i-1)+j];
@@ -170,8 +158,6 @@ void KeyExpansion(unsigned char* key, unsigned char* key_schedule) {
 			key_schedule[4*i+k] = temp[k] ^ key_schedule[4*(i-4)+k];
 		}
 	}
-	print(key_schedule+32);
-
 
 }
 

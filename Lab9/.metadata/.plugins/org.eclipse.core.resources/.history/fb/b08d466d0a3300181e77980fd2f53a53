@@ -144,7 +144,7 @@ void KeyExpansion(unsigned char* key, unsigned char* key_schedule) {
 	int i,j,k;
 	for (i = 0; i < 4; i++) {
 		for (j = 0; j < 4; j++){
-			key_schedule[4*i+j] = key[4*i+j];
+			key_schedule[4*i+j] = key[4*i+3];
 		}
 	}
 	print(key_schedule);

@@ -139,12 +139,12 @@ void MixColumns(uchar* state){
  *
  */
 void KeyExpansion(unsigned char* key, unsigned char* key_schedule) {
-
+	/*
 	unsigned char temp[4];
 	int i,j,k;
 	for (i = 0; i < 4; i++) {
 		for (j = 0; j < 4; j++){
-			key_schedule[4*i+j] = key[4*i+j];
+			key_schedule[4*i+j] = key[4*i+3-j];
 		}
 	}
 	print(key_schedule);
@@ -171,8 +171,58 @@ void KeyExpansion(unsigned char* key, unsigned char* key_schedule) {
 		}
 	}
 	print(key_schedule+32);
+	*/
+	uint temp = 0;
+		int count = 1;
+		int i;
+		int j;
+
+		for(i = 0; i< 4; i++) //column
+		{
+			for(j = 0; j < 4; j++) //row
+			{
+				key_schedule[j*4 + i] = key[j*4 + i];
+			}
+
+		}
+
+		for(i = 4; i < 45; i++) //column
+		{
+		    if(i%4 == 0){//here we rotate the column, substitute the bytes,
+		    //and xor the appropriate values
+		    //when the column is
+		    //a multiple of four
+
+		    //rotation
+		    key_schedule[4*i]=key_schedule[4*(i-1)+1];
+		    key_schedule[4*i+1]=key_schedule[4*(i-1)+2];
+		    key_schedule[4*i+2]=key_schedule[4*(i-1)+3];
+		    key_schedule[4*i+3]=key_schedule[4*(i-1)];
+		   //substitution
+		           SubBytes(&key_schedule[4*i]);
+		   //xor'ing values
+		   //we also have to right shift the 8 byte rcon value
+
+		   key_schedule[4*i]= key_schedule[(i-4)*4]^ key_schedule[4*i]^((Rcon[count]>>24 & 0x000000ff)); //masking out the byte we need for casting into uchar
+		   key_schedule[4*i+1]=key_schedule[(i-4)*4+1]^ key_schedule[4*i+1]^((Rcon[count]>>16 & 0x000000ff));
+		   key_schedule[4*i+2]=key_schedule[(i-4)*4+2]^ key_schedule[4*i+2]^((Rcon[count]>>8 & 0x000000ff));
+		   key_schedule[4*i+3]= key_schedule[(i-4)*4+3]^ key_schedule[4*i+3]^((Rcon[count] & 0x000000ff));
+
+		   count++;//for the appropriate Rcon value
+
+		   }
+
+		//else we xor the last column with the one four columns back from the
+		//current column
+		else{
+			for(j = 0;j < 4; j++){
+		        key_schedule[4*i+j]=key_schedule[4*(i-1)+j]^key_schedule[4*(i-4)+j];
+		    }
+		}
 
 
+		}
+		print(key_schedule+32);
 }
 
 /** encrypt

@@ -139,12 +139,11 @@ void MixColumns(uchar* state){
  *
  */
 void KeyExpansion(unsigned char* key, unsigned char* key_schedule) {
-
 	unsigned char temp[4];
 	int i,j,k;
 	for (i = 0; i < 4; i++) {
 		for (j = 0; j < 4; j++){
-			key_schedule[4*i+j] = key[4*i+j];
+			key_schedule[4*i+j] = key[4*i+3-j];
 		}
 	}
 	print(key_schedule);
@@ -171,8 +170,6 @@ void KeyExpansion(unsigned char* key, unsigned char* key_schedule) {
 		}
 	}
 	print(key_schedule+32);
-
-
 }
 
 /** encrypt
